@@ -4,7 +4,7 @@ dnf install nodejs -y
 cp backend.service /etc/systemd/system/backend.service
 
 useradd expense
-rm -rf /app
+rm -rf /app    //reruning should not fail so we added this step
 mkdir /app
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip
 cd /app
