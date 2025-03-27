@@ -8,5 +8,4 @@ dnf module start mysqld
 
 mysql_secure_installation --set-root-pass ExpenseApp@1
 
-mysql 172.31.94.208 -uroot -pExpenseApp@1
 
