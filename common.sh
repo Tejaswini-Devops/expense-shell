@@ -20,7 +20,6 @@ cd $1
 Stat $?
 
 Head "extract the content"
-Stat $?
 unzip /tmp/${component}.zip &>>$log_file
 Stat $?
 }
