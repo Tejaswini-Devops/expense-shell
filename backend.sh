@@ -2,6 +2,7 @@ MYSQL_PASSWORD=$1
 source common.sh
 component=backend
 
+
 Head "disable nodejs current version"
 dnf module disable nodejs -y &>>$log_file
 Stat $?

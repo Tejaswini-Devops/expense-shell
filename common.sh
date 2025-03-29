@@ -26,10 +26,10 @@ Stat $?
 }
 
 Stat() {
-if [ $1 == 0 ]; then
-  echo sucess
-else
-  echo Failure
-  EXIT 1
-fi
+  if [ $1 -eq 0 ]; then
+    echo sucess
+  else
+    echo Failure
+    exit 1
+  fi
 }
