@@ -8,19 +8,27 @@ DIR=$1
 
 Head "remove the existing/default app content"
 rm -rf $1  &>>$log_file //reruning should not fail so we added this step
-echo $?
+Stat $?
 
 Head "create Application directory"
 mkdir $1 &>>$log_file
-echo $?
+Stat $?
 
 Head "download the application content"
 curl -o /tmp/${component}.zip https://expense-artifacts.s3.amazonaws.com/${component}.zip &>>$log_file
 cd $1
-echo $?
+Stat $?
 
 Head "extract the content"
-echo $?
+Stat $?
 unzip /tmp/${component}.zip &>>$log_file
 }
-echo $?
+Stat $?
+
+Stat() {
+if [ $1 == 0 ]; then
+  echo sucess
+else
+  echo Failure
+fi
+}
