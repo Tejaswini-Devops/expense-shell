@@ -20,6 +20,7 @@ cd $1
 echo $?
 
 Head "extract the content"
+echo $?
 unzip /tmp/${component}.zip &>>$log_file
 }
 echo $?
