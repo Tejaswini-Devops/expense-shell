@@ -20,7 +20,11 @@ cp backend.service /etc/systemd/system/backend.service &>>$log_file
 Stat $?
 
 Head "Add user"
-useradd expense &>>$log_file
+id expense &>>$log_file
+if [ $? -ne 0 ]; then
+# the reason why we have $? instead of $1 because when we give id expense in cmd prompt and check whether it is correct or not we use echo $? if its o then pass if its 1 then fail
+  useradd expense &>>$log_file
+fi
 Stat $?
 
 App_Preq /app
