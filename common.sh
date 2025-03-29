@@ -30,5 +30,6 @@ if [ $1 == 0 ]; then
   echo sucess
 else
   echo Failure
+  EXIT 1
 fi
 }
