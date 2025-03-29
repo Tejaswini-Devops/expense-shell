@@ -6,15 +6,15 @@ Head "disable nodejs current version"
 dnf module disable nodejs -y &>>$log_file
 echo $?
 
-Head"enable nodejs latest version"
+Head "enable nodejs latest version"
 dnf module enable nodejs:18 -y &>>$log_file
 echo $?
 
-Head"install nodejs version"
+Head "install nodejs version"
 dnf install nodejs -y &>>$log_file
 echo $?
 
-Head"configure backend.service file"
+Head "configure backend.service file"
 cp backend.service /etc/systemd/system/backend.service &>>$log_file
 echo $?
 
