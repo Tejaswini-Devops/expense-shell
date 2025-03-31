@@ -1,3 +1,4 @@
+MYSQL_PASSWORD=$1
 component=backend
 source common.sh
 
@@ -39,7 +40,7 @@ dnf install mysql -y &>>$log_file
 Stat $?
 
 Head "Load Schema"
-mysql -h mysql-dev.tejudevops.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file
+mysql -h mysql-dev.tejudevops.online -uroot -p${MYSQL_PASSWORD} < /app/schema/backend.sql &>>$log_file
 Stat $?
 
 
