@@ -1,3 +1,4 @@
+component=backend
 source common.sh
 
 Head "Disable existing Nodejs version"
@@ -20,23 +21,7 @@ Head "Add User"
 useradd expense &>>$log_file
 echo $?
 
-Head "Remove the existing content"
-rm -rf /app &>>$log_file
-echo $?
-
-Head "Create Directory"
-mkdir /app &>>$log_file
-echo $?
-
-Head "Download the Content to Directory"
-curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip &>>$log_file
-cd /app &>>$log_file
-echo $?
-
-Head "Extract the Application content"
-unzip /tmp/backend.zip &>>$log_file
-npm install &>>$log_file
-echo $?
+App_Preq /app
 
 Head "Start and reload the services"
 systemctl daemon-reload &>>$log_file
