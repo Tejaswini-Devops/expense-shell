@@ -1,17 +1,17 @@
-source common.sh
-component=frontend
+dnf install nginx -y
 
-Head "Install nginx web server"
-dnf install nginx -y &>>$log_file
-Stat $?
+systemctl enable nginx
+systemctl start nginx
 
-Head "Configure frontend"
-cp expense.conf /etc/nginx/default.d/expense.conf &>>$log_file
-Stat $?
+rm-rf /usr/nginx/share/html/*
 
-App_Preq /usr/share/nginx/html
+curl -o /tmp/frontend.zip frontend.zip https://expense-artifacts.s3.amazonaws.com/frontend.zip
 
-Head "start nginx services"
-systemctl enable nginx &>>$log_file
-systemctl restart nginx &>>$log_file
-Stat $?
+cd /usr/nginx/share/html
+unzip /tmp/frontend.zip
+
+cp expense.conf /etc/nginx/default.d/expense.conf
+
+systemctl restart nginx
+
+
