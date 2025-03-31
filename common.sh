@@ -21,6 +21,5 @@ echo $?
 
 Head "Extract the Application content"
 unzip /tmp/${component}.zip &>>$log_file
-npm install &>>$log_file
 echo $?
 }

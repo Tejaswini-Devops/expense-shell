@@ -23,6 +23,9 @@ echo $?
 
 App_Preq /app
 
+npm install &>>$log_file
+echo $?
+
 Head "Start and reload the services"
 systemctl daemon-reload &>>$log_file
 systemctl enable backend &>>$log_file
