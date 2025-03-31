@@ -1,3 +1,4 @@
+source common.sh
 Head " Install nginx server"
 dnf install nginx -y
 echo $?
