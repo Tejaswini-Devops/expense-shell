@@ -27,7 +27,6 @@ Stat $?
 App_Preq /app
 
 npm install &>>$log_file
-Stat $?
 
 Head "Start and reload the services"
 systemctl daemon-reload &>>$log_file
