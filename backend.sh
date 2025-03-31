@@ -4,6 +4,7 @@ dnf module enable nodejs:20 -y
 dnf install nodejs-y
 
 useradd expense
+rm -rf /app
 
 mkdir /app
 
