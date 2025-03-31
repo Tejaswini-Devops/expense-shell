@@ -3,7 +3,7 @@ log_file=/tmp/expense.log
 Head(){
   echo -e "\e[35m$1\e[0m"
 }
-
+MYSQL_PASSWORD=$1
 App_Preq(){
 DIR=$1
 Head "Remove the existing content"

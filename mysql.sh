@@ -17,7 +17,7 @@ systemctl start mysqld &>>$log_file
 Stat $?
 
 Head "Change the default password"
-mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$log_file
+mysql_secure_installation --set-root-pass ${MYSQL_PASSWORD} &>>$log_file
 Stat $?
 
 
