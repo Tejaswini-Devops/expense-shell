@@ -1,7 +1,5 @@
-log_file=/tmp/expense.log
-Head(){
-  echo -e "\e[35m$1\e[0m"
-}
+source common.sh
+
 Head "Disable existing Nodejs version"
 dnf module disable nodejs -y &>>$log_file
 echo $?
